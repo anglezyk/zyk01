@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>春节倒计时（除夕不放假）</title>
+  <style>
+    body {
+      background-color: #ff6347;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .countdown {
+      margin-top: 50px;
+      font-size: 40px;
+      color: #333;
+    }
+
+    .countdown span {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff6347;
+      color: gold;
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <div><span id="bfj">春节倒计时（除夕不放假）</span></div>
+  <div class="countdown">
+    <span id="days">00</span><span>天</span>
+    <span id="hours">00</span><span>小时</span>
+    <span id="minutes">00</span><span>分钟</span>
+    <span id="seconds">00</span><span>秒</span>
+  </div>
+  <div class="distances">
+  <div><span id="now"></span></div>
+  <div><span id="targetDate"></span></div>
+  <div><span id="distance"></span></div>
+</div>
+
+  <script>
+    // 设置目标日期为春节的日期（2023年2月1日）
+    var targetDate = new Date(2024, 1, 10); // 月份从0开始，所以1代表2月
+
+    // 更新倒计时每秒一次
+    function updateCountdown() {
+      var now = new Date();
+      var distance = targetDate - now;
+     
+
+      // 计算时间差
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // 更新倒计时显示
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+      document.getElementById("now").innerHTML = now;
+      document.getElementById("distance").innerHTML =distance;
+      document.getElementById("targetDate").innerHTML =targetDate;
+    }
+
+    // 每秒更新倒计时
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
