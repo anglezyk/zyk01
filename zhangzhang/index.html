@@ -14,16 +14,24 @@
     <div class="swithDivContain">
         <div class="longCanvas">
             <div class="introduction">
-                <audio controls="false" autoplay hidden loop>
-                    <source src="./AwayFromTheRain.mp3" type="audio/mpeg">
-                    您的浏览器不支持音频元素。
-                  </audio>
+               
+                
                 <!-- <video src="./AwayFromTheRain.mp3"autoplay hidden loop></video>     -->
                 <div class="mask">
                     <div class="introductionText"><span>只要演奏音乐，</span><span>就能唤来晴天。</span> </div>
+                    <br>
                     <div class="introductionText"><span>只要努力学习，</span><span>就有辉煌明天。</span> </div>
+                    <br>
                     <div class="introductionText"><span>每天努力一点，</span><span>跳槽更近一点。</span> </div>
+
                     <span class="introductionTitle">————《花语旋律》</span>
+
+                    <!-- <button id="playButton"><div class="introductionText">按下来点音乐？</div></button> -->
+                    <audio id="myAudio" hidden loop>
+                        <source src="./AwayFromTheRain.mp3" type="audio/mpeg">
+                        <source src="./AwayFromTheRain.ogg" type="audio/ogg">
+                        您的浏览器不支持音频元素。
+                    </audio>
                 </div>
                 <div class="seeMore">↓ 滚动鼠标或向下滑动查看更多 ↓</div>
             </div>
@@ -51,6 +59,20 @@
     </div>
     <script src="./assets/script/main.js"></script>
     <script src="./assets/script/main2.js"></script>
+    <script>
+        var playButton = document.getElementById('playButton');
+        var audio = document.getElementById('myAudio');
+    
+        // playButton.addEventListener('click', function() {
+            setTimeout(function() {
+                audio.play();},1000)
+            // if (audio.paused) {
+            //     audio.play();
+            // } else {
+            //     audio.pause();
+            // }
+        // });
+    </script>
 </body>
 
 </html>
