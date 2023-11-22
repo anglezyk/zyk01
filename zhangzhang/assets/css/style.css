@@ -67,28 +67,37 @@
 
 div:first-of-type.introductionText span:first-child {
     opacity: 0;
-    animation: opctZeroToOne .7s ease-out 2s forwards;
+    animation: opctZeroToOne .8s ease-out 2s forwards;
 }
 
 div:first-of-type.introductionText span:last-child {
     opacity: 0;
-    animation: opctZeroToOne .7s ease-out 3s forwards;
+    animation: opctZeroToOne .8s ease-out 3s forwards;
 }
 
 
 div:nth-of-type(2).introductionText span:first-child {
     opacity: 0;
-    animation: opctZeroToOne .7s ease-out 4s forwards;
+    animation: opctZeroToOne .8s ease-out 4s forwards;
 }
 
 div:nth-of-type(2).introductionText span:last-child {
     opacity: 0;
-    animation: opctZeroToOne .7s ease-out 5s forwards;
+    animation: opctZeroToOne .8s ease-out 5s forwards;
+}
+div:nth-of-type(3).introductionText span:first-child {
+    opacity: 0;
+    animation: opctZeroToOne .8s ease-out 6s forwards;
+}
+
+div:nth-of-type(3).introductionText span:last-child {
+    opacity: 0;
+    animation: opctZeroToOne .8s ease-out 7s forwards;
 }
 
 .introductionTitle {
     opacity: 0;
-    animation: opctZeroToOne .7s ease-out 6s forwards;
+    animation: opctZeroToOne .8s ease-out 7s forwards;
     transform: translate(0px, 100px);
 }
 
