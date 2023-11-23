@@ -94,6 +94,9 @@ div:nth-of-type(3).introductionText span:last-child {
     opacity: 0;
     animation: opctZeroToOne .8s ease-out 7s forwards;
 }
+button{
+    background-color: transparent;
+}
 
 .introductionTitle {
     opacity: 0;

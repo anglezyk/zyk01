@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新年倒计时（除夕不放假）</title>
+    <title>新年倒计时（除夕不放假版）</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    
+
 </head>
 
 <body>
     <div class="swithDivContain">
         <div class="longCanvas">
             <div class="introduction">
-               
-                
+
+
                 <!-- <video src="./AwayFromTheRain.mp3"autoplay hidden loop></video>     -->
                 <div class="mask">
                     <div class="introductionText"><span>只要演奏音乐，</span><span>就能唤来晴天。</span> </div>
@@ -26,8 +26,8 @@
 
                     <span class="introductionTitle">————《花语旋律》</span>
 
-                    <!-- <button id="playButton"><div class="introductionText">按下来点音乐？</div></button> -->
-                    <audio id="myAudio" hidden loop>
+                    <button id="playButton" style="opacity: 0.5;"><div class="introductionText">按下来点音乐？</div></button>
+                    <audio id="myAudio" autoplay hidden loop>
                         <source src="./AwayFromTheRain.mp3" type="audio/mpeg">
                         <source src="./AwayFromTheRain.ogg" type="audio/ogg">
                         您的浏览器不支持音频元素。
@@ -40,7 +40,8 @@
                     <div class="headImg"></div>
                     <p>Hello大家好，我是zhang,很荣幸的通知大家</p>
                     <p>今年除夕不放假</p>
-                    <p>不要哭，听首歌冷静一下<a target="_blank" href="https://y.qq.com/n/ryqq/songDetail/000CFgOU38USFz">点这里</a></p>
+                    <p>不要哭，听首歌冷静一下<a target="_blank" href="https://y.qq.com/n/ryqq/songDetail/000CFgOU38USFz">点这里</a>
+                    </p>
                     <div class="thankList">新年倒计时：
                         <span id="days">00</span><span>天</span>
                         <span id="hours">00</span><span>小时</span>
@@ -61,18 +62,44 @@
     <script src="./assets/script/main2.js"></script>
     <script>
         var playButton = document.getElementById('playButton');
-        var audio = document.getElementById('myAudio');
-    
-        // playButton.addEventListener('click', function() {
-            setTimeout(function() {
-                audio.play();},1000)
-            // if (audio.paused) {
-            //     audio.play();
-            // } else {
-            //     audio.pause();
-            // }
+        var myAudio = document.getElementById('myAudio');
+        var shouldContinue = true;
+        // while (shouldContinue) {
+        //     if (audio.paused) {
+        //         audio.play();
+        //         setTimeout(() => { }, 5000);  // Wait for 1 second before checking the status again
+        //     } else {
+        //         shouldContinue = false;  // Set the flag to false to stop the loop if the audio is not paused
+        //     }
+        // }
+
+        // window.onload = function () {
+        //     myAudio.play();
+        //     alert("页面加载完成！");
+        // };
+
+        // 监听音频播放状态
+        // myAudio.addEventListener('play', function () {
+        //     // 获取音频状态并使用alert显示
+        //     var audioStatus = myAudio.playStatus;
+        //     alert("音频状态: " + audioStatus);
         // });
+
+
+        playButton.addEventListener('click', function () {
+
+            if (myAudio.paused) {
+                myAudio.play();
+            } else {
+                myAudio.pause();
+            }
+        });
+
+        // setTimeout(function () {
+        //     audio.play();
+        // }, 2000)
     </script>
+
 </body>
 
 </html>
