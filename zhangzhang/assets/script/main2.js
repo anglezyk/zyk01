@@ -1,6 +1,6 @@
 
     // 设置目标日期为春节的日期（2023年2月1日）
-    var targetDate = new Date(2024, 1, 10); // 月份从0开始，所以1代表2月
+    var targetDate = new Date(2024, 1, 09); // 月份从0开始，所以1代表2月
 
     // 更新倒计时每秒一次
     function updateCountdown() {
