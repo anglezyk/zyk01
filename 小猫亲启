@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>给小猫的告白</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+background:#fdf6f9;
+font-family:"微软雅黑",sans-serif;
+overflow:hidden;
+}
+.words{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+font-size:22px;
+color:#ff5c8d;
+line-height:1.8;
+width:85%;
+z-index:10;
+}
+.heart{
+position:absolute;
+color:#ff5c8d;
+animation:fall linear infinite;
+}
+@keyframes fall{
+0%{transform:translateY(-10vh) rotate(0deg);opacity:1;}
+100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
+}
+</style>
+</head>
+<body>
+<div class="words">
+我可爱的小猫，<br>
+想每天亲死你，把你搂在怀里，<br>
+爱你，永远❤️<br>
+你的乖乖小狗
+</div>
+<script>
+function makeHeart(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerText="❤️"; // 已修正笔误，保证爱心正常显示
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(Math.random()*3+2)+"s";
+h.style.fontSize=Math.random()*15+10+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+}
+setInterval(makeHeart,200);
+</script>
+</body>
+</html>
