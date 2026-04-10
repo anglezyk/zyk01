@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background: #ffe6f2; margin: 0; overflow: hidden;}
+.message {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+font-size: 24px; color: #ff3399; text-align: center; z-index: 100;}
+</style>
+</head>
+<body>
+<div class="message">我可爱的小猫，想每天亲死你，把你搂在怀里，爱你，永远❤️，你的乖乖小狗</div>
+<script>
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.position = "absolute";
+  heart.style.left = Math.random()*100+"vw";
+  heart.style.top = Math.random()*100+"vh";
+  heart.style.fontSize = Math.random()*30+10+"px";
+  heart.style.color = "#ff3399";
+  heart.style.animation = "fall "+(Math.random()*3+2)+"s linear infinite";
+  heart.textContent = "❤️";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove()},5000);
+}
+setInterval(createHeart,300);
+</script>
+</body>
+</html>
